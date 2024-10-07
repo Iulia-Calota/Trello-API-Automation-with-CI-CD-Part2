@@ -111,5 +111,12 @@ Test results Trello API - Postman CLI - Jenkinsfile:
 ![Newman](<Images/Trello API -Newman - Jenkinsfile.png>)
 
 
-Conclusion:
+## Conclusion:
+This project successfully implemented automated testing for the Trello API using various methods:
 
+A) The Postman collection was run using the CLI in the PowerShell terminal, demonstrating effective command-line execution.
+B) The collection was also executed with Newman in PowerShell, generating detailed HTML reports for comprehensive analysis.
+C) Jenkins provided a clear dashboard showcasing the test results, highlighting the status of each test case with detailed logs for debugging.
+D) The integration of Newman with Jenkins through the Jenkinsfile ensured smooth automation, resulting in consistent reporting of test outcomes.
+
+Overall, all 37 tests were executed successfully, validating the functionality and reliability of the Trello API.
