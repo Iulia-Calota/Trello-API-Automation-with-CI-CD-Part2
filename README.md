@@ -108,7 +108,7 @@ Test results Trello API - Postman CLI - Jenkinsfile:
 
 
 **D)** Trello API -Newman - Jenkins
-![Newman](<Images/Trello API -Newman - Jenkinsfile.png>)
+![Newman API](<Images/Trello API -Newman - Jenkinsfile.png>)
 
 
 ## Conclusion:
