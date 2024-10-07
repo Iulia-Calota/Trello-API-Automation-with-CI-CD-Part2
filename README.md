@@ -78,20 +78,22 @@ This repository contains the **Trello API Oct.2024.postman_collection.json**, de
 ![HTMLExtra Report](<Images/Newman Run HTML extra Report.png>)
 
 
-**C)** Jenkins Pipeline for Trello API Testing
+**C)** Jenkins Pipeline for Trello API Testing pipeline 
+
+```groovy
 pipeline {
   agent any
   
-  environment {
-      POSTMAN_API_KEY = credentials("postman-api-key")
-  }
+    environment {
+        POSTMAN_API_KEY = credentials("postman-api-key")
+    }
 
   stages {
 
     stage('Postman CLI Login') {
       steps {
         sh 'postman login --with-api-key $POSTMAN_API_KEY'
-      }
+        }
     }
 
     stage('Running collection') {
@@ -101,8 +103,10 @@ pipeline {
     }
   }
 }
+```
 
-Test results Trello API - Postman CLI - Jenkinsfile:
+Test results Trello API - Postman CLI - Jenkinsfile
+
 ![Jenkins file](<Images/Trello API - Postman CLI - Jenkinsfile.png>)
 
 
@@ -116,7 +120,7 @@ This project successfully implemented automated testing for the Trello API using
 
 **A)** The Postman collection was run using the CLI in the PowerShell terminal, demonstrating effective command-line execution.
 
-**B) **The collection was also executed with Newman in PowerShell, generating detailed HTML reports for comprehensive analysis.
+**B)** The collection was also executed with Newman in PowerShell, generating detailed HTML reports for comprehensive analysis.
 
 **C)** Jenkins provided a clear dashboard showcasing the test results, highlighting the status of each test case with detailed logs for debugging.
 
