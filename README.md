@@ -59,7 +59,10 @@ This repository contains the **Trello API Oct.2024.postman_collection.json**, de
 **B)** Postman Collection Run Using PowerShell Terminal with Newman
       - Includes HTML report generated using Newman HTML Extra.
 
-**C)** Test results and generated reports from the Jenkins dashboard
+**C)** Test Results and Generated Reports from the Jenkins Dashboard
+      - The Jenkins dashboard displays the test results from the Trello API collection, showing the status of each test case (passed or failed) along with detailed logs.
+
+**D)** Trello API -Newman - Jenkinsfile reports from Jenkins      
 
 **A)** This section outlines the execution of the Trello API Collection using the Postman CLI in a PowerShell terminal. This automation process enables efficient running of API tests and generates a comprehensive test report.
 
@@ -69,8 +72,44 @@ This repository contains the **Trello API Oct.2024.postman_collection.json**, de
 
 **B)** The report is generated using Newman based on the Trello API collection.
 ![Newman Run](<Images/Report Newman run from Postman.png>)
+
 - HTML report generated using Newman HTML Extra
 
 ![HTMLExtra Report](<Images/Newman Run HTML extra Report.png>)
 
+
+**C)** Jenkins Pipeline for Trello API Testing
+pipeline {
+  agent any
+  
+  environment {
+      POSTMAN_API_KEY = credentials("postman-api-key")
+  }
+
+  stages {
+
+    stage('Postman CLI Login') {
+      steps {
+        sh 'postman login --with-api-key $POSTMAN_API_KEY'
+      }
+    }
+
+    stage('Running collection') {
+      steps {
+        sh 'postman collection run "YOUR COLLECTION ID"'
+      }
+    }
+  }
+}
+
+Test results Trello API - Postman CLI - Jenkinsfile:
+![Jenkins file](<Images/Trello API - Postman CLI - Jenkinsfile.png>)
+
+
+
+**D)** Trello API -Newman - Jenkins
+![Newman](<Images/Trello API -Newman - Jenkinsfile.png>)
+
+
+Conclusion:
 
